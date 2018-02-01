@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>ProjectReddit</th>
+        <th>                           </th>
+        <th><a href="/addlink">AddLink </a></th>
+        <th>                             </th>
+        <th><a href="/login">Login </a></th>
+    </tr>
+</table>
+
+<table>
+    <tr th:each="content : ${contents}">
+        <td>
+            <a th:href="@{content.url}">"${content.title}"</a>
+        </td>
+    <td>
+        Submitted by:
+    </td>
+        <!--<td th:text="${content.title}"><a/></td>-->
+    </tr>
+    <tr th:each="content : ${contents}">
+        <td th:text="${content.url}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
